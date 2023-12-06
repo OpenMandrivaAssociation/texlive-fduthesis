@@ -1,6 +1,6 @@
 Name:		texlive-fduthesis
-Version:	64288
-Release:	2
+Version:	67231
+Release:	1
 Summary:	LaTeX thesis template for Fudan University
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fduthesis
