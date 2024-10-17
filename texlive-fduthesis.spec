@@ -3,7 +3,7 @@ Version:	67231
 Release:	1
 Summary:	LaTeX thesis template for Fudan University
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fduthesis
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/fduthesis
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fduthesis.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fduthesis.doc.r%{version}.tar.xz
