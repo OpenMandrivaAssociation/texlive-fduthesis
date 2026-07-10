@@ -1,40 +1,24 @@
-Name:		texlive-fduthesis
-Version:	67231
-Release:	1
+%global tl_name fduthesis
+%global tl_revision 67231
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.9a
+Release:	%{tl_revision}.1
 Summary:	LaTeX thesis template for Fudan University
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/fduthesis
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fduthesis.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fduthesis.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fduthesis.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/fduthesis.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/fduthesis.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/fduthesis.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package is a LaTeX thesis template package for Fudan
-University. It can make it easy to write theses both in Chinese
-and English.
+This package is a LaTeX thesis template package for Fudan University. It
+can make it easy to write theses both in Chinese and English.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/fduthesis
-%{_texmfdistdir}/tex/latex/fduthesis
-%doc %{_texmfdistdir}/doc/latex/fduthesis
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
